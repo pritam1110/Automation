@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Adactin Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.adactin.utils.TestListener"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="Adactin Functional Tests(failed)">
+    <classes>
+      <class name="com.adactin.tests.SearchHotelTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifySearchHotelWithValidCredentials"/>
+        </methods>
+      </class> <!-- com.adactin.tests.SearchHotelTest -->
+    </classes>
+  </test> <!-- Adactin Functional Tests(failed) -->
+</suite> <!-- Failed suite [Adactin Suite] -->

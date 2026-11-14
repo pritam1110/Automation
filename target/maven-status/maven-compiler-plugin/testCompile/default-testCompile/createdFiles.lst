@@ -1,0 +1,8 @@
+com\adactin\pages\LoginPage.class
+com\adactin\base\BaseTest.class
+com\adactin\tests\SearchHotelTest.class
+com\adactin\utils\ConfigReader.class
+com\adactin\tests\LoginTest.class
+com\adactin\pages\SearchHotelPage.class
+com\adactin\utils\TestListener.class
+com\adactin\utils\ScreenshotUtil.class
