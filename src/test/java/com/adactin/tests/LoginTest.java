@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     public void verifyLoginPageTitle() {
         LoginPage loginPage = new LoginPage(getDriver());
         String title = loginPage.getPageTitle();
-        Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation System"), "Page title mismatch! Actual title: " + title);
+        Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation Systems"), "Page title mismatch! Actual title: " + title);
     }
 
     @Test(priority = 2, groups = {"smoke"})
