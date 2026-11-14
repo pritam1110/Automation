@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     public void verifyLoginPageTitle() {
         LoginPage loginPage = new LoginPage(getDriver());
         String title = loginPage.getPageTitle();
-        Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation Systems"), "Page title mismatch! Actual title: " + title);
+        Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation System"), "Page title mismatch! Actual title: " + title);
     }
 
     @Test(priority = 2, groups = {"smoke"})
@@ -26,9 +26,15 @@ public class LoginTest extends BaseTest {
     public void verifyInvalidLogin() {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.login("invalid_user_999", "invalid_password_999");
-        
         String errorMessage = loginPage.getErrorMessage();
-        Assert.assertTrue(errorMessage.contains("Invalid Login details or Your Password might have expired."), 
-                "Expected error message not found. Actual: " + errorMessage);
+        Assert.assertTrue(errorMessage.contains("Invalid Login details or Your Password might have expired."), "Expected error message not found. Actual: " + errorMessage);
+    }
+
+    @Test(priority = 4, groups = {"regression"})
+    public void verifyInvalidLoginWithoutPassword() {
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.login("invalid_user_999", "");
+        String errorMessage = loginPage.getErrorMessage();
+        Assert.assertTrue(errorMessage.contains("Invalid Login details or Your Password might have expired."), "Expected error message not found. Actual: " + errorMessage);
     }
 }
