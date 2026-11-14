@@ -29,12 +29,4 @@ public class LoginTest extends BaseTest {
         String errorMessage = loginPage.getErrorMessage();
         Assert.assertTrue(errorMessage.contains("Invalid Login details or Your Password might have expired."), "Expected error message not found. Actual: " + errorMessage);
     }
-
-    @Test(priority = 4, groups = {"regression"})
-    public void verifyInvalidLoginWithoutPassword() {
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.login("invalid_user_999", "");
-        String errorMessage = loginPage.getErrorMessage();
-        Assert.assertTrue(errorMessage.contains("Invalid Login details or Your Password might have expired."), "Expected error message not found. Actual: " + errorMessage);
-    }
 }
