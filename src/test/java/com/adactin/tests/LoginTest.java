@@ -12,6 +12,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(getDriver());
         String title = loginPage.getPageTitle();
         Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation System"), "Page title mismatch! Actual title: " + title);
+        System.out.println("Git and Jenkins testing");
     }
 
     @Test(priority = 2, groups = {"smoke"})
