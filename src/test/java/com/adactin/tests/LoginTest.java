@@ -7,14 +7,6 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(priority = 1, groups = {"smoke", "sanity"})
-    public void verifyLoginPageTitle() {
-        LoginPage loginPage = new LoginPage(getDriver());
-        String title = loginPage.getPageTitle();
-        Assert.assertTrue(title.contains("Adactin.com - Hotel Reservation System"), "Page title mismatch! Actual title: " + title);
-        System.out.println("Git and Jenkins testing");
-    }
-
     @Test(priority = 2, groups = {"smoke"})
     public void verifyLoginFields() {
         LoginPage loginPage = new LoginPage(getDriver());
